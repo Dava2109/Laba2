@@ -1,0 +1,49 @@
+using System;
+
+namespace ДавкаАрмяшка
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите длину сторон кадрата");
+            double LONG = Convert.ToDouble(Console.ReadLine());
+            Diagonale(LONG);
+            Perimetr(LONG);
+            double KBADRAT = Squder(LONG);
+            Console.WriteLine("Введите высоту призмы Н");
+            double High = Convert.ToDouble(Console.ReadLine());
+            Volume(KBADRAT, High);
+
+
+
+            double Diagonale(double Long)
+            {
+                double Dia = Long* Math.Pow(2, (0.5));
+                Console.WriteLine($"Диагональ квадрата: {Dia}");
+                return Dia;
+            }
+            double Perimetr(double Long)
+            {
+                double Per = 4*Long;
+                Console.WriteLine($"Периметр: {Per}");
+                return Per;
+            }
+            double Squder(double Long)                          //Площадь 
+            {
+                double Sq = Math.Pow(Long, 2);
+                Console.WriteLine($"Площадь: {Sq}");
+                return Sq;
+            }
+            double Volume(double Sq, double H)
+            {
+                double Vol = Sq * H;
+                Console.WriteLine($"Объем заданой фигуры с выстотй Н: {Vol}");
+                return Vol;
+            }
+
+
+            Console.ReadKey();
+        }
+    }
+}
